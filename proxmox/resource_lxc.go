@@ -220,6 +220,11 @@ func resourceLxc() *schema.Resource {
 							Optional: true,
 							Computed: true,
 						},
+						"ro": {
+							Type:			schema.TypeInt,
+							Optional: true,
+							Default:  0,
+						},
 					},
 				},
 			},
@@ -348,7 +353,7 @@ func resourceLxc() *schema.Resource {
 						},
 						"storage": {
 							Type:     schema.TypeString,
-							ForceNew: true,
+							ForceNew: false,
 							Required: true,
 						},
 						"size": {
